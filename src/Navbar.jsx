@@ -7,19 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 // import Tooltip from "@mui/material/Tooltip";
 // import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import {
-  Typography,
-  AppBar,
-  Box,
-  Toolbar,
-  Menu,
-  IconButton,
-  Container,
-  Avatar,
-  Button,
-  Tooltip,
-  MenuItem,
-} from "@mui/material";
+import { Typography, AppBar, Box, Toolbar, Menu, IconButton, Container, Avatar, Button, Tooltip, MenuItem } from "@mui/material";
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const Navbar = () => {
@@ -41,7 +29,7 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
   return (
-    <AppBar position="static" style={{ background: "white", color: "black" }}>
+    <AppBar position="static" style={{ background: "white", color: "black" }} elevation={0}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography noWrap href="/">
@@ -49,14 +37,7 @@ const Navbar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+            <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
               <MenuIcon />
             </IconButton>
             <Menu
