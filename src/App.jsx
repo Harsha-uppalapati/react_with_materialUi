@@ -1,9 +1,9 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import Navbar from "./Navbar";
 const App = () => {
   return (
     <div>
-      <Typography variant="h1">hello</Typography>
+      <Navbar />
     </div>
   );
 };
