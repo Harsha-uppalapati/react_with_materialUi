@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import "./Navbar.css";
 import MenuIcon from "@mui/icons-material/Menu";
 // import Container from "@mui/material/Container";
 // import Avatar from "@mui/material/Avatar";
@@ -41,25 +41,10 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ background: "white", color: "black" }}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
+          <Typography noWrap href="/">
             LOGO
           </Typography>
 
@@ -119,7 +104,7 @@ const Navbar = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map(page => (
+            {/* {pages.map(page => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -127,12 +112,12 @@ const Navbar = () => {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+            <Tooltip title="profile">
+              <IconButton>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
@@ -152,13 +137,41 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map(setting => (
+              {/* {settings.map(setting => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
             </Menu>
           </Box>
+          <Typography
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            Ashrae
+          </Typography>
+          <Button
+            variant="outlined"
+            sx={{
+              ml: 6,
+              maxWidth: "120px",
+              maxHeight: "50px",
+              minWidth: "120px",
+              minHeight: "50px",
+              borderRadius: "10px",
+              color: "black",
+              borderWidth: "1px",
+            }}
+          >
+            Logout
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>
