@@ -1,11 +1,9 @@
 import { makeStyles } from "@material-ui/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LensIcon from "@material-ui/icons/Lens";
-import { Box, Button, Card, CardContent, CardMedia, List, ListItem, Typography } from "@mui/material";
+import { Box, Button, Card, CardMedia, List, ListItem, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import CarouselSlide from "react-material-ui-carousel";
-
-import React, { useState } from "react";
 const useStyles = makeStyles({
   card: {
     width: "75%",
@@ -83,13 +81,12 @@ const useStyles = makeStyles({
     height: "350px",
   },
   containerGrid: {
-    width: "79%",
+    width: "80.5%",
     marginTop: "30px",
     borderRadius: "20px",
     display: "flex",
-    padding: "30px",
+    padding: "25px",
     alignItems: "center",
-    // margin: "20px,0px,",
   },
 });
 const Profile = () => {
@@ -126,12 +123,10 @@ const Profile = () => {
             <Box
               component="img"
               sx={{
-                height: 200,
+                height: 180,
                 border: "1px",
                 borderRadius: "20px",
-                width: 200,
-                // maxHeight: { xs: 233, md: 167 },
-                // maxWidth: { xs: 350, md: 250 },
+                width: 180,
               }}
               alt="img"
               src="https://www.felixhospital.com/sites/default/files/2022-11/dr-dk-gupta.jpg"
@@ -140,65 +135,63 @@ const Profile = () => {
 
           <Box
             sx={{
-              height: 200,
-              width: 220,
               display: "flex",
               flexDirection: "column",
               paddingLeft: "50px",
+              width: "25%",
             }}
           >
-            <Typography variant="p" fontSize="30px" component="div" fontWeight="bold">
-              Dr. Will Martin
-            </Typography>
-            <Typography color="#aaa" component="div" variant="h5" paddingTop="20px">
-              Chaines medicen
-            </Typography>
-            <Typography color="#5aa52c" component="div" variant="p" paddingTop="80px" fontSize="18px" fontWeight="550">
+            <Box>
+              <Typography variant="p" fontSize="25px" fontWeight="bold">
+                Dr. Will Martin
+              </Typography>
+              <Typography color="#999" paddingTop="15px" fontSize="20px">
+                Chinese medicine
+              </Typography>
+            </Box>
+            <Typography color="#5aa52c" paddingTop="70px" fontSize="16px" fontWeight="500">
               2 Slots Avalible Today
             </Typography>
           </Box>
 
           <Box
             sx={{
-              height: 200,
-              width: 300,
               display: "flex",
               flexDirection: "column",
-              paddingLeft: "85px",
+              width: "25%",
             }}
           >
-            <Typography variant="p" fontSize="18px" component="div" paddingTop="20px" fontWeight="bold">
-              Jupiter Hospital,
-            </Typography>
-            <Typography color="#aaa" component="div" paddingTop="15px" fontSize="20px">
-              514, Avalanche Avenue,
-            </Typography>
-            <Typography color="#aaa" component="div" variant="p" paddingTop="8px" fontSize="20px">
-              waverly St. Louisiana, USA
-            </Typography>
-            <Typography color="#0066ff" component="div" variant="p" paddingTop="60px" fontSize="18px" fontWeight="550" sx={{ textDecoration: "underline" }}>
+            <Box>
+              <Typography fontSize="16px" paddingTop="10px" fontWeight="bold">
+                Jupiter Hospital,
+              </Typography>
+              <Typography color="#aaa" paddingTop="10px" fontSize="18px">
+                514, Avalanche Avenue, waverly St, Louisiana, USA
+              </Typography>
+            </Box>
+            <Typography color="#0066ff" paddingTop="45px" fontSize="18px" fontWeight="550" sx={{ textDecoration: "underline" }}>
               Get Directions
             </Typography>
           </Box>
 
           <Box
             sx={{
-              height: 178,
               width: 230,
               display: "flex",
               justifyContent: "center",
-              alignItems: "end",
+              alignItems: "flex-end",
               paddingLeft: "50px",
+              height: "160px",
             }}
           >
             <Button
               variant="contained"
               sx={{
-                height: "50px",
-                width: "90%",
+                height: "43px",
+                width: "75%",
                 borderRadius: "10px",
-                borderWidth: "1px",
-                fontSize: "10px",
+                textTransform: "capitalize",
+                fontSize: "11px",
                 backgroundColor: "#00317b",
               }}
             >
@@ -223,13 +216,13 @@ const Profile = () => {
             </Box>
           </Box>
           <Box className={classes.expertise}>
-             <Typography variant="h6">Medical License</Typography>
+            <Typography variant="h6">Medical License</Typography>
             <Box className={classes.expertiseBox}>
               <List>
                 {medicalLicenses.map((e, i) => {
                   return (
                     <ListItem key={i}>
-                     {++i}. &nbsp;<Typography className={classes.listItem}> Number: &nbsp;</Typography> {e.number} &nbsp;&nbsp;&nbsp;&nbsp; <Typography className={classes.listItem}>Country:&nbsp;</Typography> {e.country}
+                      {++i}. &nbsp;<Typography className={classes.listItem}> Number: &nbsp;</Typography> {e.number} &nbsp;&nbsp;&nbsp;&nbsp; <Typography className={classes.listItem}>Country:&nbsp;</Typography> {e.country}
                     </ListItem>
                   );
                 })}
