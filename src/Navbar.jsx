@@ -1,186 +1,65 @@
 import * as React from "react";
 import "./Navbar.css";
 import MenuIcon from "@mui/icons-material/Menu";
-// import Container from "@mui/material/Container";
-// import Avatar from "@mui/material/Avatar";
-// import Button from "@mui/material/Button";
-// import Tooltip from "@mui/material/Tooltip";
-// import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import {
-  Typography,
-  AppBar,
-  Box,
-  Toolbar,
-  Menu,
-  IconButton,
-  Container,
-  Avatar,
-  Button,
-  Tooltip,
-  MenuItem,
-  CardContent,
-  Card,
-} from "@mui/material";
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { Typography, AppBar, Box, Toolbar, Menu, IconButton, Container, Avatar, Button, Tooltip, MenuItem, CardContent, Card } from "@mui/material";
+import { makeStyles } from "@material-ui/styles";
+const useStyles = makeStyles({
+  logo: {
+    color: "#00317B",
+    fontSize: "25px",
+    fontWeight: "600",
+    marginLeft: "30px",
+  },
+});
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = event => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = event => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const classes = useStyles();
 
   return (
     <AppBar
       elevation={0}
       position="static"
       style={{
-        background: "rgba(255,255,255,1)",
+        background: "#fff",
         color: "black",
       }}
     >
       <Container maxWidth="lg">
-        <Toolbar disableGutters>
-          <Typography noWrap href="/">
-            LOGO
+        <Toolbar>
+          <Typography variant="p" margin={"20px 0px 0 25px"} className={classes.logo}>
+            allodoc
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {/* {pages.map(page => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {/* {pages.map(page => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))} */}
-          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="profile">
               <IconButton>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="https://www.felixhospital.com/sites/default/files/2022-11/dr-dk-gupta.jpg"
-                />
+                <Avatar alt="Remy Sharp" src="https://www.felixhospital.com/sites/default/files/2022-11/dr-dk-gupta.jpg" />
               </IconButton>
             </Tooltip>
-            {/* <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map(setting => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu> */}
           </Box>
           <Box>
             <Typography
-              noWrap
-              component="a"
               href="/"
               sx={{
                 display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                color: "inherit",
-                textDecoration: "none",
+                fontFamily: "monospace Plus Jakarta Display",
+                color: "#14161A",
+                fontStyle: "normal",
+                fontWeight: 500,
+                fontSize: "14px",
               }}
             >
               Ashrae Freeman
             </Typography>
             <Typography
-              noWrap
-              component="a"
               href="/"
               sx={{
                 display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                color: "#aaa",
-                textDecoration: "none",
-                fontSize: 13,
+                fontFamily: "monospace Plus Jakarta Display",
+                color: "#A4ABB7",
+                fontSize: 11,
               }}
             >
               Ashrae Freeman
@@ -189,14 +68,14 @@ const Navbar = () => {
           <Button
             variant="outlined"
             sx={{
-              ml: 6,
-              maxWidth: "120px",
-              maxHeight: "50px",
-              minWidth: "120px",
-              minHeight: "50px",
-              borderRadius: "10px",
-              color: "black",
-              borderWidth: "1px",
+              width: "110px",
+              height: "40px",
+              border: "1px solid #00317B",
+              borderRadius: " 10px",
+              color: "#00317B",
+              fontSize: "12px",
+              marginRight: "23px",
+              marginLeft: "40px",
             }}
           >
             Logout

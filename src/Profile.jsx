@@ -4,9 +4,10 @@ import LensIcon from "@material-ui/icons/Lens";
 import { Box, Button, Card, CardMedia, List, ListItem, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import CarouselSlide from "react-material-ui-carousel";
+import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 const useStyles = makeStyles({
   card: {
-    width: "75%",
+    width: "73.3%",
     marginTop: "30px",
     marginBottom: "70px",
     padding: "60px",
@@ -18,14 +19,16 @@ const useStyles = makeStyles({
     justifyContent: "center",
   },
   expertise: {
-    borderBottom: "1.5px solid #eeeeee",
+    borderBottom: "1.5px solid #E8EEF8",
     padding: "30px 0",
+    fontWeight: 550,
   },
   clinicH6: {
     padding: "40px 0",
   },
   experience: {
     paddingTop: "20px 0",
+    fontWeight: 550,
   },
   expertiseBox: {
     display: "flex",
@@ -33,14 +36,14 @@ const useStyles = makeStyles({
   },
   expertiseSpan: {
     padding: "15px",
-    backgroundColor: "rgba(0, 100, 250, 0.1)",
+    backgroundColor: "#E0ECFF",
     borderRadius: "10px",
     margin: "0 20px 10px 0",
-    color: "rgb(0, 100, 250)",
+    color: "#0066FF",
     fontWeight: "bold",
   },
   listItem: {
-    color: "#aaa",
+    color: "#A4ABB7",
   },
   experienceH6: {
     display: "flex",
@@ -52,12 +55,12 @@ const useStyles = makeStyles({
     marginBottom: "-8px",
   },
   experienceListItem: {
-    color: "#aaa",
-    fontSize: "13px",
+    color: "#A4ABB7",
+    fontSize: "12px",
   },
   experienceList: {
     padding: "20px 0",
-    borderBottom: "1.5px solid #eeeeee",
+    borderBottom: "1.5px solid #E8EEF8",
   },
   dot: {
     fontSize: "7px",
@@ -81,7 +84,7 @@ const useStyles = makeStyles({
     height: "350px",
   },
   containerGrid: {
-    width: "80.5%",
+    width: "79%",
     marginTop: "30px",
     borderRadius: "20px",
     display: "flex",
@@ -118,7 +121,7 @@ const Profile = () => {
   return (
     <>
       <Box className={classes.grid} sx={{ minWidth: "275px" }}>
-        <Card className={classes.containerGrid} elevation={0}>
+        <Card className={classes.containerGrid} elevation={0} borderRadius="20px">
           <Box>
             <Box
               component="img"
@@ -142,14 +145,14 @@ const Profile = () => {
             }}
           >
             <Box>
-              <Typography variant="p" fontSize="25px" fontWeight="bold">
+              <Typography variant="p" fontSize="25px" fontWeight="bold" color="#14161A">
                 Dr. Will Martin
               </Typography>
-              <Typography color="#999" paddingTop="15px" fontSize="20px">
+              <Typography color="#A4ABB7" paddingTop="15px" fontSize="20px">
                 Chinese medicine
               </Typography>
             </Box>
-            <Typography color="#5aa52c" paddingTop="70px" fontSize="16px" fontWeight="500">
+            <Typography color="#5AA52C" paddingTop="70px" fontSize="16px" fontWeight="500">
               2 Slots Avalible Today
             </Typography>
           </Box>
@@ -162,14 +165,14 @@ const Profile = () => {
             }}
           >
             <Box>
-              <Typography fontSize="16px" paddingTop="10px" fontWeight="bold">
+              <Typography fontSize="16px" paddingTop="10px" fontWeight="bold" color={"#14161A"}>
                 Jupiter Hospital,
               </Typography>
-              <Typography color="#aaa" paddingTop="10px" fontSize="18px">
+              <Typography color="#A4ABB7" paddingTop="10px" fontSize="18px">
                 514, Avalanche Avenue, waverly St, Louisiana, USA
               </Typography>
             </Box>
-            <Typography color="#0066ff" paddingTop="45px" fontSize="18px" fontWeight="550" sx={{ textDecoration: "underline" }}>
+            <Typography color="#0066FF" paddingTop="45px" fontSize="18px" fontWeight="550" sx={{ textDecoration: "underline" }}>
               Get Directions
             </Typography>
           </Box>
@@ -192,7 +195,7 @@ const Profile = () => {
                 borderRadius: "10px",
                 textTransform: "capitalize",
                 fontSize: "11px",
-                backgroundColor: "#00317b",
+                backgroundColor: "#00317B",
               }}
             >
               Book Slot
@@ -328,7 +331,58 @@ const Profile = () => {
                   ))}
                 </Carousel>
               </Box>
-              <Box></Box>
+              <Box style={{ width: "46%", margin: "0 60px" }}>
+                <Box style={{ display: "flex", justifyContent: "space-between", borderBottom: "1.5px solid #E8EEF8" }}>
+                  <Box style={{ width: "50%" }}>
+                    <Typography style={{ fontSize: "17px", color: "#14161A", fontWeight: "bold", paddingBottom: "15px" }}>
+                      <PlaceOutlinedIcon style={{ marginBottom: "-5px" }} /> Jupiter Hospital,
+                    </Typography>
+                    <Typography style={{ fontSize: "11px", color: "#A4ABB7", width: "65% " }}>514, Avalanche Avenue waverly St, Louisiana, USA</Typography>
+                    <Typography style={{ color: "#0066FF", fontSize: "13px", paddingTop: "10px", paddingBottom: "10px", textDecoration: "underline" }}>Get Direction</Typography>
+                  </Box>
+                  <Box style={{ width: "50%" }}>
+                    <Typography style={{ fontSize: "17px", color: "#14161A", fontWeight: "bold", paddingBottom: "15px" }}>Clinic Contact Info</Typography>
+                    <Typography style={{ color: "#0066FF", fontSize: "13px", paddingBottom: "10px" }}>+966-44400500</Typography>
+                  </Box>
+                </Box>
+                <Box>
+                  <Box style={{ display: "flex", justifyContent: "space-between", paddingTop: "30px" }}>
+                    <Typography style={{ fontSize: "17px", color: "#14161A", fontWeight: "bold", paddingBottom: "15px" }}>Clinic Hours</Typography>
+                    <Typography className={classes.expandIcon}>
+                      <ExpandMoreIcon className={classes.expandIcon} />
+                    </Typography>
+                  </Box>
+                  <Box style={{ display: "flex" }}>
+                    <Typography style={{ fontSize: "12px", color: "#81CA55", fontWeight: "500", display: "flex" }}>
+                      Open
+                      <Typography>
+                        <LensIcon style={{ fontSize: "7px", color: "#14161A", marginBottom: "5px", padding: "0 30px" }} />
+                      </Typography>
+                    </Typography>
+                    <Box>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px" }}>Today,Tuesday</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>Wednesday</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>Thursday</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>Friday</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>Saturday</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>Sunday</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>Monday</Typography>
+                    </Box>
+                    <Typography>
+                      <LensIcon style={{ fontSize: "7px", color: "#14161A", marginBottom: "5px", padding: "0 30px" }} />
+                    </Typography>
+                    <Box>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px" }}>8:30-20:00</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>8:30-20:00</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>8:30-20:00</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>8:30-20:00</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>8:30-20:00</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>8:30-20:00</Typography>
+                      <Typography style={{ fontWeight: "bold", fontSize: "12px", paddingTop: "7px" }}>8:30-20:00</Typography>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
             </Box>
           </Box>
         </Card>
